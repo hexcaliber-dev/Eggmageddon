@@ -7,6 +7,8 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 
     public Image eggBG;
+    public RectTransform eggImg1;
+    public RectTransform eggImg2;
     public Object firstScene;
     private float previousVolume;
     enum state {start, quit, muteBG, muteFX};
@@ -18,6 +20,10 @@ public class MainMenu : MonoBehaviour {
         
     }
 
+    void Update() {
+        eggImg1.Rotate(Vector3.right * Time.deltaTime * 10);
+        eggImg2.Rotate(Vector3.left * Time.deltaTime * 10);
+    }
 
     void OnMouseUp() {
         
