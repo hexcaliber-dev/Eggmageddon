@@ -15,4 +15,10 @@ public class MissileExplosion : Explosion
     {
         
     }
+
+    public override void applyAffect(GameObject unit)
+    {
+        Destroy(unit);
+    }
+
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 abstract public class Explosion : MonoBehaviour
 {
 
+    
+
     public float getX()
     {
         return transform.position.x;

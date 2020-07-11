@@ -1,14 +1,14 @@
-using UnityEngine;
+// using UnityEngine;
 
-public class MainMenu : MonoBehavior {
+// public class MainMenu : MonoBehavior {
 
-    // Begin game
-        // Difficulty
-    void Start() {
+//     // Begin game
+//         // Difficulty
+//     void Start() {
         
-    }
+//     }
 
-    // Mute music/sfx corner button
+//     // Mute music/sfx corner button
 
-    // Quit game
-}
+//     // Quit game
+// }
