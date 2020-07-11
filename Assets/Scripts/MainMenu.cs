@@ -6,6 +6,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 
     public Image eggBG;
+    public Object firstScene;
     enum state {start, quit, muteBG, muteFX};
     // Begin game
         // Difficulty
@@ -47,7 +48,7 @@ public class MainMenu : MonoBehaviour {
              
              yield return null;
          }
-         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+         SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
      }
 //     Mute music/sfx corner button
 
