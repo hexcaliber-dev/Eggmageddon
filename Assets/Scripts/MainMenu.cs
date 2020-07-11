@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour {
     public RectTransform eggImg1;
     public RectTransform eggImg2;
     public GameObject startArea;
+    public GameObject exitArea;
     public GameObject player;
     public Object firstScene;
     private float previousVolume;
@@ -26,6 +27,7 @@ public class MainMenu : MonoBehaviour {
         eggImg1.Rotate(Vector3.right * Time.deltaTime * 10);
         eggImg2.Rotate(Vector3.left * Time.deltaTime * 10);
         startArea.transform.Rotate(Vector3.forward * Time.deltaTime * 100);
+        exitArea.transform.Rotate(Vector3.forward * -1 * Time.deltaTime * 100);
         if (Vector3.Distance(player.transform.position, startArea.transform.position) < 1f) {
             Debug.Log("on start");
         }

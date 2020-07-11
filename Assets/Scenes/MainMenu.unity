@@ -1605,6 +1605,7 @@ MonoBehaviour:
   eggImg1: {fileID: 343141972}
   eggImg2: {fileID: 1909363210}
   startArea: {fileID: 884504277}
+  exitArea: {fileID: 452344218}
   player: {fileID: 762051739}
   firstScene: {fileID: 102900000, guid: 3a8ef32016437d5469325bf60fbddce0, type: 3}
 --- !u!114 &1748793190
