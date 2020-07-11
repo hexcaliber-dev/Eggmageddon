@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class Egg : MonoBehaviour {
     public const float maxSpeed = 1;
-    public const float accelRate = 0.5,
-        decelRate = 0.5;
+    public const float accelRate = 0.5f,
+        decelRate = 0.5f;
     public const int maxHealth = 3;
 
     public int currHealth;
