@@ -5,6 +5,8 @@ using UnityEngine;
 public class MissileExplosion : Explosion
 {
 
+    public float outerExplosionRadius;
+    public float innerExplosionRadius;
     private float sizeIncreaseScale;
 
     // Start is called before the first frame update
@@ -23,8 +25,17 @@ public class MissileExplosion : Explosion
     {
         if (unit.tag == "Egg")
         {
-            Destroy(unit);
-            Debug.Log("Object Destroyed");
+            // 
+            if (Vector2.Distance(transform.position, unit.transform.position) < outerExplosionRadius)
+            {
+                if(Vector2.Distance(transform.position, unit.transform.position) < innerExplosionRadius)
+                {
+                    Debug.Log("Egg Severley Damaged");
+                    // unit.GetComponent<Egg>().Damage(1);
+                }
+                // unit.GetComponent<Egg>().Damage(1);
+            }
+            Debug.Log("Egg Damaged");
         }
     }
 
