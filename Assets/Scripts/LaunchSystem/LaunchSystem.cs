@@ -18,8 +18,7 @@ public class LaunchSystem : MonoBehaviour
     private float launchSize;
     private Vector2 borderTopRight;
     private Vector2 borderBottomLeft;
-    private float locationX;
-    private float locationY;
+    private Vector2 location;
     private bool gameOngoing;
 
     // Start is called before the first frame update
@@ -39,15 +38,19 @@ public class LaunchSystem : MonoBehaviour
         
     }
 
+    public Vector2 getLocation()
+    {
+        return location;
+    }
 
     IEnumerator ConstantLaunching()
     {
         Vector2 rp;
         while (gameOngoing)
         {
-            rp = randomPosition();
+            location = randomPosition();
             GameObject x = Instantiate(missile);
-            x.transform.position = rp;
+            x.transform.position = location;
             Debug.Log("Explosion X: " + x.GetComponent<Explosion>().getX() + " Explsion YL " + x.GetComponent<Explosion>().getY());
             yield return new WaitForSeconds(difficultyRate);
         }

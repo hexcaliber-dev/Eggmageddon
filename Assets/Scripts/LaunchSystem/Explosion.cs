@@ -15,6 +15,11 @@ abstract public class Explosion : MonoBehaviour
         return transform.position.y;
     }
     
+    public Vector2 getLocation()
+    {
+        return new Vector2( transform.position.x, transform.position.y); 
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision Detected");
