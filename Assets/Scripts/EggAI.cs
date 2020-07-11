@@ -3,20 +3,14 @@ using UnityEngine;
 
 public class EggAI : Egg {
 
-    public enum AIState {Idle, RunningAway, RunningTowards, Dead};
-
-    public AIState currState;
+    public ExpressionGenerator expressions;
 
     public override void Start () {
         base.Start ();
-        // instantiate references
-        currState = AIState.Idle;
     }
 
     public override void Move () {
-        // AI movement
-        if (currState == AIState.Idle) {
-            
-        }
+        expressions.SetDirection(GetComponent<Rigidbody2D>().velocity);
+        // AI movement is handled by flock behaviors.
     }
 }
