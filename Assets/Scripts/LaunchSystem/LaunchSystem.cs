@@ -15,16 +15,18 @@ public class LaunchSystem : MonoBehaviour
     // Variables that will be changed within the code
     private float launchRate;
     private float launchSize;
-    private float borderTopRight;
-    private float borderBottomLeft;
+    private Vector2 borderTopRight;
+    private Vector2 borderBottomLeft;
     private float locationX;
     private float locationY;
 
     // Start is called before the first frame update
     void Start()
     {
-        borderTopRight = topRightBorder.transform.position.x;
-        borderBottomLeft = bottomLeftBorder.transform.position.y;
+        borderTopRight = new Vector2(topRightBorder.transform.position.x, topRightBorder.transform.position.y);
+        borderBottomLeft = new Vector2(bottomLeftBorder.transform.position.x, bottomLeftBorder.transform.position.y);
+        // Debug.Log(borderTopRight);
+        // Debug.Log(borderBottomLeft);
     }
 
     // Update is called once per frame

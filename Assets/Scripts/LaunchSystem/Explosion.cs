@@ -5,8 +5,6 @@ using UnityEngine;
 abstract public class Explosion : MonoBehaviour
 {
 
-    
-
     public float getX()
     {
         return transform.position.x;
@@ -19,6 +17,7 @@ abstract public class Explosion : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collision Detected");
         applyAffect( collision.gameObject );
     }
 
