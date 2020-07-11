@@ -4,7 +4,7 @@ public abstract class Egg : MonoBehaviour {
     public const float maxSpeed = 5f;
     public const float accelRate = 3f,
         decelRate = 3f;
-    public const int maxHealth = 2;
+    public const int maxHealth = 3;
 
     public int currHealth;
 
@@ -25,7 +25,7 @@ public abstract class Egg : MonoBehaviour {
     public void Damage(int amount) {
         currHealth -= amount;
         if (currHealth == 1) {
-            // crack sprite??
+            print("crack");
         } else if (currHealth <= 0) {
             Destroy(gameObject);
         }

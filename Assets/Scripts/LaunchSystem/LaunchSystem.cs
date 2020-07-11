@@ -43,7 +43,7 @@ public class LaunchSystem : MonoBehaviour {
 
     // mwehehehehe meerkatz - Omar and Akhil
     IEnumerator ConstantLaunching () {
-        Vector2 rp;
+        // Vector2 rp;
         while (gameOngoing) {
             location = randomPosition ();
             GameObject x = Instantiate (missile);
