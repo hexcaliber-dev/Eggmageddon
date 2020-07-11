@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent (typeof (Collider2D))]
 public class FlockAgent : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class FlockAgent : MonoBehaviour {
     public Collider2D AgentCollider { get { return agentCollider; } }
     public Transform eggSprites;
     public MovementGenerator movement;
+    public GameObject expression;
 
     // Start is called before the first frame update
     void Start () {
@@ -28,5 +30,10 @@ public class FlockAgent : MonoBehaviour {
         eggSprites.rotation = Quaternion.Euler(new Vector3(0, 0, heading));
         transform.position += (Vector3) velocity * Time.deltaTime;
         movement.SetDirection(velocity);
+    }
+
+    public void changeExpression(ExpressionGenerator.Emotion emo, float seconds)
+    {
+        expression.GetComponent<ExpressionGenerator>().SetEmotion(emo, seconds);
     }
 }

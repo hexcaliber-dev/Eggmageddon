@@ -55,6 +55,7 @@ public class Flock : MonoBehaviour
         foreach (FlockAgent agent in agents)
         {
             if (agent != null) {
+
                 List<Transform> context = GetNearbyObjects(agent);
 
                 //FOR DEMO ONLY
