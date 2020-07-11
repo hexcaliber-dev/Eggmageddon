@@ -12,6 +12,7 @@ public class LaunchSystem : MonoBehaviour
     // Values decided within the game
     public float difficultyRate;
     public float difficultySize;
+    public static List<GameObject> currentExplosions;
 
     // Variables that will be changed within the code
     private float launchRate;
@@ -20,13 +21,13 @@ public class LaunchSystem : MonoBehaviour
     private Vector2 borderBottomLeft;
     private Vector2 location;
     private bool gameOngoing;
-    private GameObject[] currentExplosions;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         gameOngoing = true;
-        currentExplosions = new GameObject[0];
+        currentExplosions = new List<GameObject>();
         borderTopRight = new Vector2(topRightBorder.transform.position.x, topRightBorder.transform.position.y);
         borderBottomLeft = new Vector2(bottomLeftBorder.transform.position.x, bottomLeftBorder.transform.position.y);
         StartCoroutine(ConstantLaunching());
@@ -45,6 +46,7 @@ public class LaunchSystem : MonoBehaviour
         return location;
     }
 
+    // mwehehehehe meerkatz - Omar and Akhil
     IEnumerator ConstantLaunching()
     {
         Vector2 rp;
@@ -52,7 +54,9 @@ public class LaunchSystem : MonoBehaviour
         {
             location = randomPosition();
             GameObject x = Instantiate(missile);
+            currentExplosions.Add(x);
             x.transform.position = location;
+            Debug.Log(currentExplosions.Count);
             Debug.Log("Explosion X: " + x.GetComponent<Explosion>().getX() + " Explsion YL " + x.GetComponent<Explosion>().getY());
             yield return new WaitForSeconds(difficultyRate);
         }
