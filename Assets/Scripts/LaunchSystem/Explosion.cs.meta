@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Editor/CompositeBehaviorEditor.cs.meta
+guid: d4ec5d3e60f87af469891c7768015f1d
+=======
+guid: 9f5de41caae23784388833ab1ccc7148
+>>>>>>> df744c3159331ef255105eb34fb0a656f4c58e60:Assets/Scripts/LaunchSystem/Explosion.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,35 +1,50 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
-    // enum state {start, quit, muteBG, muteFX};
-    // // Begin game
-    //     // Difficulty
-    // void Start() {
+    public Image eggBG;
+    enum state {start, quit, muteBG, muteFX};
+    // Begin game
+        // Difficulty
+    void Start() {
+        
+    }
 
-    // }
+    void OnMouseUp() {
+        
+    }
 
-    // void OnMouseUp() {
-    //     switch(state) {
-    //         case state.start:
+    public void startGame() {
+        StartCoroutine(initStartTransition(eggBG, new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 0f), new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 1f), 3f));
+    }
 
-    //             break;
+    public void exitGame(int exitCode = 0) {
+        // Maybe egg cracking animation or smth lol
+        Debug.Log("exiting game");
+        Application.Quit(exitCode);
+    }
 
-    //         case state.quit:
-    //             // Maybe egg cracking animation or smth lol
-    //             Application.exit(0);
-    //             break;
+     private IEnumerator initStartTransition(Image image, Color from, Color to, float duration)
+     {
+         float timeElapsed = 0.0f;
+         
+         float t = 0.0f;
+         while(t < 1.0f)
+         {
+             timeElapsed += Time.deltaTime;
+ 
+             t = timeElapsed / duration;
 
-    //         case state.muteBG:
-                
-    //             break;
-    //         case state.muteFX:
+             image.color = Color.Lerp(from, to, t);
+             
+             yield return null;
+         }
+         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+     }
+//     Mute music/sfx corner button
 
-    //             break;
-    //     }
-    // }
-
-    // Mute music/sfx corner button
-
-    // Quit game
+//     Quit game
 }
