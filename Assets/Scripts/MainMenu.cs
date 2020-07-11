@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour {
 
     void OnMouseUp() {
         
-    }
+//     }
 
     public void startGame() {
         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);

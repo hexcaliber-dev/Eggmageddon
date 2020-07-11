@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Egg.cs.meta
 guid: 69a3c1b3f9d0c724f871f9880d44b1c0
+=======
+guid: 1a71448bc5377c5429d4078b81e4d678
+>>>>>>> a7959391fe5c4105ac89046bae9098b9c737ddf8:Assets/Scripts/AI.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
