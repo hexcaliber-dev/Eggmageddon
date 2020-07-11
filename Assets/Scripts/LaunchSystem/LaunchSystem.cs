@@ -20,11 +20,13 @@ public class LaunchSystem : MonoBehaviour
     private Vector2 borderBottomLeft;
     private Vector2 location;
     private bool gameOngoing;
+    private GameObject[] currentExplosions;
 
     // Start is called before the first frame update
     void Start()
     {
         gameOngoing = true;
+        currentExplosions = new GameObject[0];
         borderTopRight = new Vector2(topRightBorder.transform.position.x, topRightBorder.transform.position.y);
         borderBottomLeft = new Vector2(bottomLeftBorder.transform.position.x, bottomLeftBorder.transform.position.y);
         StartCoroutine(ConstantLaunching());
