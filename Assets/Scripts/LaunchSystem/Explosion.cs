@@ -48,6 +48,7 @@ abstract public class Explosion : MonoBehaviour
     IEnumerator startMassacre()
     {
         yield return new WaitForSeconds(detonationDelay);
+        LaunchSystem.currentExplosions.Remove(gameObject);
         Destroy(gameObject);
     }
 
