@@ -43,10 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333f53a43c158b439051356228f10f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  north: []
-  west: []
-  south: []
-  east: []
+  north:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  west:
+  - {fileID: 21300000, guid: 142c4499acfc7ca418fe0bf8c11399f1, type: 3}
+  - {fileID: 21300000, guid: 2b04d0e615007c847b1c35ffd2697d2f, type: 3}
+  - {fileID: 21300000, guid: d46822f05bdada742b84996ab6b7c3d9, type: 3}
+  - {fileID: 21300000, guid: b1e17eec96fe50745be230ac9c8ea082, type: 3}
+  south:
+  - {fileID: 21300000, guid: ddb33c482054f1446b358be591b30a96, type: 3}
+  - {fileID: 21300000, guid: 2bc240f0ae0fccc4cbc7e7eee2902fc5, type: 3}
+  - {fileID: 21300000, guid: a69af9e1cb6dd6a4abd9b082a23bb2ed, type: 3}
+  - {fileID: 21300000, guid: 3fd09a085094e96498cebadebac2928e, type: 3}
+  east:
+  - {fileID: 21300000, guid: 5aeba940b7b31424ba33001238cc94f3, type: 3}
+  - {fileID: 21300000, guid: 3f0118110bd7c3749a87846006c0f6c5, type: 3}
+  - {fileID: 21300000, guid: 4bf49a072e5baf74392c593e0b299ace, type: 3}
+  - {fileID: 21300000, guid: 3665221ad7f6093448e7b226fd652714, type: 3}
   egg: {fileID: 2487685}
   crack: {fileID: 1780521853732427877}
   movement: {fileID: 2487687}
