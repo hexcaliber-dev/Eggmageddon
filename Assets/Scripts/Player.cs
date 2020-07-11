@@ -40,6 +40,6 @@ public class Player : Egg {
         //         rigidBody.velocity -= decelRate*rigidBody.velocity.normalized*Time.deltaTime;
         //     else
         //         rigidBody.velocity = Vector2.zero;
-        GetComponent<MovementGenerator>().SetDirection (rigidBody.velocity);
+        // GetComponent<MovementGenerator>().SetDirection (rigidBody.velocity);
     }
 }

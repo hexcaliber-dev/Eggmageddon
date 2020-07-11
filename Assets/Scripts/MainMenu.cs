@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour {
     public Image eggBG;
     public RectTransform eggImg1;
     public RectTransform eggImg2;
+    public GameObject startArea;
+    public GameObject player;
     public Object firstScene;
     private float previousVolume;
     enum state {start, quit, muteBG, muteFX};
@@ -23,6 +25,10 @@ public class MainMenu : MonoBehaviour {
     void Update() {
         eggImg1.Rotate(Vector3.right * Time.deltaTime * 10);
         eggImg2.Rotate(Vector3.left * Time.deltaTime * 10);
+        startArea.transform.Rotate(Vector3.forward * Time.deltaTime * 100);
+        if (Vector3.Distance(player.transform.position, startArea.transform.position) < 1f) {
+            Debug.Log("on start");
+        }
     }
 
     void OnMouseUp() {
@@ -35,7 +41,8 @@ public class MainMenu : MonoBehaviour {
             eggBG, 
             new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 0f), 
             new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 1f), 
-            3f)
+            3f,
+            firstScene)
         );
     }
 
@@ -47,7 +54,7 @@ public class MainMenu : MonoBehaviour {
     }
 
 
-    private IEnumerator initStartTransition(Image image, Color from, Color to, float duration)
+    private IEnumerator initStartTransition(Image image, Color from, Color to, float duration, Object scene)
     {
         float timeElapsed = 0.0f;
         
@@ -62,7 +69,7 @@ public class MainMenu : MonoBehaviour {
             
             yield return null;
         }
-        SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+        SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
     }
 
     //     Mute music/sfx corner button
