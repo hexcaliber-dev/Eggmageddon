@@ -1,7 +1,46 @@
 fileFormatVersion: 2
 guid: 6dd923d748f37da4c967e6f61ad655b7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4970949434509683300
+    second: missile_explosion_sheet_0
+  - first:
+      213: -1381238806324685894
+    second: missile_explosion_sheet_1
+  - first:
+      213: 5839587424148108491
+    second: missile_explosion_sheet_2
+  - first:
+      213: 7444349177089270728
+    second: missile_explosion_sheet_3
+  - first:
+      213: 2795952291004167877
+    second: missile_explosion_sheet_4
+  - first:
+      213: -7175191261361112751
+    second: missile_explosion_sheet_5
+  - first:
+      213: 1872767376657325230
+    second: missile_explosion_sheet_6
+  - first:
+      213: -8883332499537064812
+    second: missile_explosion_sheet_7
+  - first:
+      213: 7851276583917173749
+    second: missile_explosion_sheet_8
+  - first:
+      213: 8682764019019787755
+    second: missile_explosion_sheet_9
+  - first:
+      213: 5363283914324715640
+    second: missile_explosion_sheet_10
+  - first:
+      213: -2211265356241472317
+    second: missile_explosion_sheet_11
+  - first:
+      213: 3125299216111369114
+    second: missile_explosion_sheet_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +79,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,7 +136,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: missile_explosion_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 28
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c951f9793d3a30bb0800000000000000
+      internalID: -4970949434509683300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: missile_explosion_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 5
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3580faf9ad4dce0800000000000000
+      internalID: -1381238806324685894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: missile_explosion_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 4
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4bf23a2d16a0150800000000000000
+      internalID: 5839587424148108491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: missile_explosion_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 4
+        width: 97
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3a06c7224af4760800000000000000
+      internalID: 7444349177089270728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: missile_explosion_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 30
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c63e3a8bc73dc620800000000000000
+      internalID: 2795952291004167877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
