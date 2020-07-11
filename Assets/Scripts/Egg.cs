@@ -10,16 +10,33 @@ public abstract class Egg : MonoBehaviour {
 
     public GameObject[] deadEggs;
 
-    public virtual void Start () {
+    private Rigidbody2D body;
+
+    public virtual void Start()
+    {
         currHealth = maxHealth;
-    }
-    public abstract void Move ();
-
-    public virtual void Update () {
-        Move ();
+        body = GetComponent<Rigidbody2D>();
+        gameObject.tag = "Egg";
     }
 
-    void OnCollisionEnter2D (Collision2D col) {
+    public abstract void Move();
+
+    public virtual void Update()
+    {
+        Move();
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Vector2 currentPos = transform.position;
+        int scale = 1000;
+
+        if (col.gameObject.CompareTag("Egg"))
+        {
+            Vector2 knockback = (Vector2)col.transform.position - currentPos; //knockback direction
+            body.AddForce(knockback * scale);
+        }
+
         // Handle missile collisions TODO
         // Possibly powerup collisions too
     }
