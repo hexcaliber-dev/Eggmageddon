@@ -26,4 +26,4 @@ MonoBehaviour:
   - {x: -16, y: 2}
   - {x: -16, y: 5}
   - {x: -14, y: 4}
-  minDistance: 4
+  minDistance: 2

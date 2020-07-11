@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e835954d327e50d42bd844771a165317, type: 3}
-  m_Name: New Player Follow Behavior
+  m_Script: {fileID: 11500000, guid: 829404622e9991e42ad00c42daf79c50, type: 3}
+  m_Name: New Missile Avoidance Behavior
   m_EditorClassIdentifier: 
-  randomness: 0.197
