@@ -48,7 +48,7 @@ public class LaunchSystem : MonoBehaviour
             rp = randomPosition();
             GameObject x = Instantiate(missile);
             x.transform.position = rp;
-            Debug.Log(rp);
+            Debug.Log("Explosion X: " + x.GetComponent<Explosion>().getX() + " Explsion YL " + x.GetComponent<Explosion>().getY());
             yield return new WaitForSeconds(difficultyRate);
         }
     }
