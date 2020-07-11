@@ -24,4 +24,8 @@ public class MovementGenerator : MonoBehaviour {
             }
         }
     }
+
+    public Direction GetDirection () {
+        return (Direction)anim.GetInteger("direction");
+    }
 }
