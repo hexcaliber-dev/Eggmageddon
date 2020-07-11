@@ -8,7 +8,10 @@ abstract public class Explosion : MonoBehaviour
     public float sizeLimit;
     public float rateOfSizeOfIncrease;
     public float detonationDelay;
+    public GameObject explosionObject;
+    public Animation explosionAnimation;
     private bool increasing;
+    private bool applyingAffect;
     
 
     public float getX()
@@ -29,6 +32,7 @@ abstract public class Explosion : MonoBehaviour
     void Awake ()
     {
         increasing = true;
+        applyingAffect = false;
     }
 
     public void FixedUpdate()
@@ -48,6 +52,9 @@ abstract public class Explosion : MonoBehaviour
     IEnumerator startMassacre()
     {
         yield return new WaitForSeconds(detonationDelay);
+        applyingAffect = true;
+        explosionObject.SetActive(true);
+        yield return new WaitForSeconds(explosionObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(default).length);
         LaunchSystem.currentExplosions.Remove(gameObject);
         Destroy(gameObject);
     }
@@ -56,8 +63,11 @@ abstract public class Explosion : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision Detected");
-        applyAffect( collision.gameObject );
+        if(applyingAffect)
+        {
+            Debug.Log("Collision Detected");
+            applyAffect( collision.gameObject );
+        }
     }
 
     public abstract void applyAffect(GameObject unit);
