@@ -60,7 +60,13 @@ public class startArea : MonoBehaviour
         }
 
         if (isEntering) {
-            SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+            if (transform.name == "StartArea")
+                SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+            else if (transform.name == "ExitArea") {
+                Debug.Log("exiting game");
+                Application.Quit(0);
+            }
+                
         }
 
     }
