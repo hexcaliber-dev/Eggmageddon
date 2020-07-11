@@ -7,7 +7,9 @@ public class ExpressionGenerator : MonoBehaviour {
     // Goes in the order: happy, neutral, angry, scared
     public List<Sprite> north, west, south, east;
 
+    public Egg egg;
     public enum Emotion { Happy, Neutral, Angry, Scared }
+    public SpriteRenderer crack;
 
     SpriteRenderer rend;
     bool emoting;
@@ -22,7 +24,14 @@ public class ExpressionGenerator : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (!emoting) {
-            rend.sprite = getSpriteList()[0];
+            if (egg.currHealth >= 2) {
+                crack.enabled = false;
+                rend.sprite = getSpriteList()[0];
+            }
+            else {
+                crack.enabled = true;
+                rend.sprite = getSpriteList()[1];
+            }
         }
     }
 

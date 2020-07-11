@@ -21,7 +21,7 @@ public class MissileExplosion : Explosion
         transform.localScale += new Vector3(sizeIncreaseScale, sizeIncreaseScale, 0);
     }
 
-    public override void applyAffect(GameObject unit)
+    public override void ApplyEffect(GameObject unit)
     {
         if (unit.tag == "Egg")
         {
@@ -31,11 +31,12 @@ public class MissileExplosion : Explosion
                 if(Vector2.Distance(transform.position, unit.transform.position) < innerExplosionRadius)
                 {
                     Debug.Log("Egg Severley Damaged");
-                    // unit.GetComponent<Egg>().Damage(1);
+                    unit.GetComponent<Egg>().Damage(2);
+                } else {
+                    unit.GetComponent<Egg>().Damage(1);
+                    Debug.Log("Egg Damaged");
                 }
-                // unit.GetComponent<Egg>().Damage(1);
             }
-            Debug.Log("Egg Damaged");
         }
     }
 

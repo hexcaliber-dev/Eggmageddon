@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3218345141639486858}
   - component: {fileID: 3218345141639486857}
-  - component: {fileID: 3218345141639486856}
   - component: {fileID: 3218345141639486859}
-  - component: {fileID: 3218345141639486852}
   m_Layer: 0
   m_Name: MissileExplosion
   m_TagString: Explosion
@@ -86,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3218345141639486856
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3218345141639486863}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.01642561}
-  serializedVersion: 2
-  m_Radius: 0.78872836
 --- !u!114 &3218345141639486859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,32 +98,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeLimit: 3
   rateOfSizeOfIncrease: 0.01
-  detonationDelay: 1.5
+  detonationDelay: 1
   explosionObject: {fileID: 3827140197162474927}
   explosionAnimation: {fileID: 0}
-  outerExplosionRadius: 0
-  innerExplosionRadius: 0
---- !u!50 &3218345141639486852
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3218345141639486863}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  outerExplosionRadius: 4
+  innerExplosionRadius: 2
 --- !u!1 &3827140197162474927
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,6 +54,9 @@ abstract public class Explosion : MonoBehaviour
         yield return new WaitForSeconds(detonationDelay);
         applyingAffect = true;
         explosionObject.SetActive(true);
+        foreach(GameObject eggu in GameObject.FindGameObjectsWithTag("Egg")) {
+            ApplyEffect(eggu);
+        }
         yield return new WaitForSeconds(explosionObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(default).length);
         LaunchSystem.currentExplosions.Remove(gameObject);
         Destroy(gameObject);
@@ -61,15 +64,6 @@ abstract public class Explosion : MonoBehaviour
 
     void increaseSize() {this.transform.localScale += new Vector3(rateOfSizeOfIncrease, rateOfSizeOfIncrease, 0);}
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(applyingAffect)
-        {
-            Debug.Log("Collision Detected");
-            applyAffect( collision.gameObject );
-        }
-    }
-
-    public abstract void applyAffect(GameObject unit);
+    public abstract void ApplyEffect(GameObject unit);
 
 }
