@@ -34,10 +34,10 @@ public class Player : Egg {
         }
         if (rigidBody.velocity.magnitude > maxSpeed)
             rigidBody.velocity = rigidBody.velocity.normalized*maxSpeed;
-        if (!currentMove)
-            if (rigidBody.velocity.magnitude > decelRate*Time.deltaTime)
-                rigidBody.velocity -= decelRate*rigidBody.velocity.normalized*Time.deltaTime;
-            else
-                rigidBody.velocity = Vector2.zero;
+        // if (!currentMove)
+        //     if (rigidBody.velocity.magnitude > decelRate*Time.deltaTime)
+        //         rigidBody.velocity -= decelRate*rigidBody.velocity.normalized*Time.deltaTime;
+        //     else
+        //         rigidBody.velocity = Vector2.zero;
     }
 }

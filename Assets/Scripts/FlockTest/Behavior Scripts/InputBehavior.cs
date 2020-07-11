@@ -36,6 +36,5 @@ public class InputBehavior : FlockBehavior {
                 velocity = Vector2.zero;
 
         return velocity;
-
     }
 }

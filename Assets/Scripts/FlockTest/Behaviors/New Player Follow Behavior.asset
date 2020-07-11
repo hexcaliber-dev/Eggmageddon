@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e835954d327e50d42bd844771a165317, type: 3}
   m_Name: New Player Follow Behavior
   m_EditorClassIdentifier: 
-  randomness: 1
+  randomness: 5
