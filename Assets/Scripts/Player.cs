@@ -14,6 +14,7 @@ public class Player : Egg {
     public override void Move() {
         // Player movement
         //rigidBody.velocity /= 1.01f;
+        
         bool currentMove = false;
         if (Input.GetKey(KeyCode.W)) {
             rigidBody.velocity += new Vector2(0, accelRate)*Time.deltaTime;
