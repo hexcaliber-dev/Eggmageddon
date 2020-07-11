@@ -1623,6 +1623,8 @@ MonoBehaviour:
   agentPrefab: {fileID: 552163360933417023, guid: e57450e75bc458645973e0e4eebd809b,
     type: 3}
   behavior: {fileID: 11400000, guid: 53985ab81b229cd4f8beb4966905e597, type: 2}
+  scaredDistance: 5
+  scaredDuration: 3
   startingCount: 105
   AgentDensity: 0.129
   driveFactor: 16.4

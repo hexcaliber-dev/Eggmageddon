@@ -7,6 +7,8 @@ public class Flock : MonoBehaviour
     public FlockAgent agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehavior behavior;
+    public float scaredDistance;
+    public float scaredDuration;
 
     [Range(10, 500)]
     public int startingCount = 250;
@@ -68,9 +70,11 @@ public class Flock : MonoBehaviour
                     move = move.normalized * maxSpeed;
                 }
                 agent.Move(move);
+                updateExpression(agent);
             }
         }
     }
+
 
     List<Transform> GetNearbyObjects(FlockAgent agent)
     {   
@@ -85,6 +89,22 @@ public class Flock : MonoBehaviour
             }
         }
         return context;
+    }
+
+    void updateExpression(FlockAgent fa)
+    {
+        GameObject[] missiles = GameObject.FindGameObjectsWithTag("Explosion");
+        float c = 0;
+        float sumDist = 0;
+        foreach (GameObject m in missiles)
+        {
+            sumDist += Vector2.Distance(fa.transform.position, m.transform.position);
+            c++;
+        }
+        if (sumDist/c < scaredDistance)
+        {
+            fa.changeExpression(ExpressionGenerator.Emotion.Scared, scaredDuration);
+        }
     }
 
 }
