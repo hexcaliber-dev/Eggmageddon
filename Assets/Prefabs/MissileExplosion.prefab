@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeLimit: 3
   rateOfSizeOfIncrease: 0.01
+  detonationDelay: 1.5
 --- !u!50 &3218345141639486852
 Rigidbody2D:
   serializedVersion: 4

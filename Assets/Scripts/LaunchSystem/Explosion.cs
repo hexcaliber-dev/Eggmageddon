@@ -7,6 +7,9 @@ abstract public class Explosion : MonoBehaviour
 
     public float sizeLimit;
     public float rateOfSizeOfIncrease;
+    public float detonationDelay;
+    private bool increasing;
+    
 
     public float getX()
     {
@@ -23,13 +26,29 @@ abstract public class Explosion : MonoBehaviour
         return new Vector2( transform.position.x, transform.position.y); 
     }
 
+    void Awake ()
+    {
+        increasing = true;
+    }
+
     public void FixedUpdate()
     {
-        increaseSize();
+        Debug.Log(increasing);
+        if (increasing)
+        {
+            increaseSize();
+        }
         if(this.transform.localScale.x >= sizeLimit)
         {
-            Destroy(gameObject);
+            increasing = false;
+            StartCoroutine(startMassacre());            
         }
+    }
+
+    IEnumerator startMassacre()
+    {
+        yield return new WaitForSeconds(detonationDelay);
+        Destroy(gameObject);
     }
 
     void increaseSize() {this.transform.localScale += new Vector3(rateOfSizeOfIncrease, rateOfSizeOfIncrease, 0);}

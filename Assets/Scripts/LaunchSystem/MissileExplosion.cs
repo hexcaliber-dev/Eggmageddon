@@ -21,8 +21,11 @@ public class MissileExplosion : Explosion
 
     public override void applyAffect(GameObject unit)
     {
-        Destroy(unit);
-        Debug.Log("Object Destroyed");
+        if (unit.tag == "Egg")
+        {
+            Destroy(unit);
+            Debug.Log("Object Destroyed");
+        }
     }
 
 }
