@@ -1,16 +1,22 @@
-// // hello eggworld
-// using UnityEngine;
+// hello eggworld
+using UnityEngine;
 
-// public class EggAI : Egg {
+public class EggAI : Egg {
 
-//     public enum AIState {Idle, RunningAway, RunningTowards, Dead};
+    public enum AIState {Idle, RunningAway, RunningTowards, Dead};
 
-//     void Start () {
-//         base.Start ();
-//         // instantiate references
-//     }
+    public AIState currState;
 
-//     public override void Move () {
-//         // AI movement
-//     }
-// }
+    public override void Start () {
+        base.Start ();
+        // instantiate references
+        currState = AIState.Idle;
+    }
+
+    public override void Move () {
+        // AI movement
+        if (currState == AIState.Idle) {
+            
+        }
+    }
+}

@@ -6,6 +6,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 
     public Image eggBG;
+    public Object firstScene;
     enum state {start, quit, muteBG, muteFX};
     // Begin game
         // Difficulty
@@ -18,7 +19,12 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void startGame() {
-        StartCoroutine(initStartTransition(eggBG, new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 0f), new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 1f), 3f));
+        StartCoroutine(initStartTransition(
+            eggBG, 
+            new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 0f), 
+            new Color(eggBG.color.r, eggBG.color.g, eggBG.color.b, 1f), 
+            3f)
+        );
     }
 
     public void exitGame(int exitCode = 0) {
@@ -42,7 +48,7 @@ public class MainMenu : MonoBehaviour {
              
              yield return null;
          }
-         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+         SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
      }
 //     Mute music/sfx corner button
 
