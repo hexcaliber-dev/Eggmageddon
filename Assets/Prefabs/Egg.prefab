@@ -307,7 +307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 2
-  expressions: {fileID: 0}
+  deadEggs:
+  - {fileID: 1984246184698197087, guid: 0ff9385cb7692a649ade482e2091be7c, type: 3}
+  - {fileID: 1984246184698197087, guid: 893a5294e05df1e4cb8227a719e7e4f3, type: 3}
+  expressions: {fileID: 1435672025}
 --- !u!114 &2487687
 MonoBehaviour:
   m_ObjectHideFlags: 0

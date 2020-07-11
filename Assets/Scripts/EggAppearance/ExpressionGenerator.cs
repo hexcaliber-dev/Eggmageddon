@@ -24,7 +24,7 @@ public class ExpressionGenerator : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (!emoting) {
-            if (egg.currHealth == 2) {
+            if (egg.currHealth >= 2) {
                 crack.enabled = false;
                 rend.sprite = getSpriteList()[0];
             }

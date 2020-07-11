@@ -8,6 +8,8 @@ public abstract class Egg : MonoBehaviour {
 
     public int currHealth;
 
+    public GameObject[] deadEggs;
+
     public virtual void Start () {
         currHealth = maxHealth;
     }
@@ -27,6 +29,7 @@ public abstract class Egg : MonoBehaviour {
         if (currHealth == 1) {
             print("crack");
         } else if (currHealth <= 0) {
+            GameObject.Instantiate(deadEggs[Random.Range(0, deadEggs.Length)], transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
