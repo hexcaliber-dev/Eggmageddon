@@ -14,6 +14,7 @@ public class AudioHelper : MonoBehaviour {
     public static void PlaySound (string soundName, bool isLoop, float volume) {
         if (audioSources == null) return;
         foreach (AudioSource src in audioSources) {
+            if (src == null) return;
             if (!src.isPlaying) {
                 src.loop = isLoop;
                 src.volume = volume * masterVolume;

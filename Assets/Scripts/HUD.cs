@@ -24,6 +24,7 @@ public class HUD : MonoBehaviour {
     void Start () {
         SetPause (false);
         StartCoroutine (DelayedStart ());
+        difficultyText.text = modeNames[(int)CONSTANTS.difficultyStates.STATE_EASY] + " MODE";
     }
 
     IEnumerator DelayedStart () {

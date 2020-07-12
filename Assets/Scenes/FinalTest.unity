@@ -426,7 +426,7 @@ MonoBehaviour:
   topRightBorder: {fileID: 1771057557}
   bottomLeftBorder: {fileID: 1588569567}
   missile: {fileID: 3218345141639486863, guid: b3343da712dd8504ba4b2683e11e42b3, type: 3}
-  difficultyRate: 10
+  difficultyRate: 20
   difficultySize: 0
   difficultyScale: 1
   launchRate: 5

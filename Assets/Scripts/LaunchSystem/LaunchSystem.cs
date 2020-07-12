@@ -24,6 +24,11 @@ public class LaunchSystem : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start () {
+        print ("DIFFICULTY " + CONSTANTS.difficulty);
+        difficultyScale = 1f / ((int) (CONSTANTS.difficulty) + 1);
+        difficultyRate = 20 - ((int) (CONSTANTS.difficulty)) * 5;
+        launchClamp = 1.0f / ((int) (CONSTANTS.difficulty) + 1);
+
         gameOngoing = true;
         currentExplosions = new List<GameObject> ();
         borderTopRight = new Vector2 (topRightBorder.transform.position.x, topRightBorder.transform.position.y);
@@ -48,18 +53,17 @@ public class LaunchSystem : MonoBehaviour {
         while (gameOngoing) {
             location = randomPosition ();
             GameObject x = Instantiate (missile);
-            AudioHelper.PlaySound("missileincoming");
+            AudioHelper.PlaySound ("missileincoming");
             currentExplosions.Add (x);
             x.transform.position = location;
             Debug.Log (currentExplosions.Count);
             Debug.Log ("Explosion X: " + x.GetComponent<Explosion> ().getX () + " Explsion YL " + x.GetComponent<Explosion> ().getY ());
             yield return new WaitForSeconds (launchRate);
-            if (launchRate > launchClamp)
-            {
-                launchRate -= launchRate/(difficultyRate);
+            if (launchRate > launchClamp) {
+                launchRate -= launchRate / (difficultyRate);
                 difficultyRate += difficultyScale;
             }
-            Debug.Log(launchRate);
+            Debug.Log (launchRate);
         }
     }
 
