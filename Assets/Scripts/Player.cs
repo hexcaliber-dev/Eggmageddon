@@ -5,7 +5,6 @@ public class Player : Egg {
 
 
     Rigidbody2D rigidBody;
-    public ExpressionGenerator expressions;
     public AccessoryGenerator accessories;
 
     new void Start () {

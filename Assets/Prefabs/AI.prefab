@@ -69,9 +69,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
+  marker: {fileID: 0}
   deadEggs:
   - {fileID: 1984246184698197087, guid: 0ff9385cb7692a649ade482e2091be7c, type: 3}
   - {fileID: 1984246184698197087, guid: 893a5294e05df1e4cb8227a719e7e4f3, type: 3}
+  expressions: {fileID: 3258224782954181574}
 --- !u!70 &1908580276370470914
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,6 +123,7 @@ MonoBehaviour:
   - {fileID: 413522261150404380}
   - {fileID: 5737873226296216124}
   - {fileID: 7658252394966459245}
+  currHat: 0
 --- !u!1 &4613179469127654794
 GameObject:
   m_ObjectHideFlags: 0
