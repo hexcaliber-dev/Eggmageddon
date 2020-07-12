@@ -11,11 +11,12 @@ public class LaunchSystem : MonoBehaviour {
     // Values decided within the game
     public float difficultyRate;
     public float difficultySize;
+    public float difficultyScale;
     public static List<GameObject> currentExplosions;
 
     // Variables that will be changed within the code
-    private float launchRate;
-    private float launchSize;
+    public float launchRate;
+    public float launchClamp;
     private Vector2 borderTopRight;
     private Vector2 borderBottomLeft;
     private Vector2 location;
@@ -51,7 +52,13 @@ public class LaunchSystem : MonoBehaviour {
             x.transform.position = location;
             Debug.Log (currentExplosions.Count);
             Debug.Log ("Explosion X: " + x.GetComponent<Explosion> ().getX () + " Explsion YL " + x.GetComponent<Explosion> ().getY ());
-            yield return new WaitForSeconds (difficultyRate);
+            yield return new WaitForSeconds (launchRate);
+            if (launchRate > launchClamp)
+            {
+                launchRate -= launchRate/(difficultyRate);
+                difficultyRate += difficultyScale;
+            }
+            Debug.Log(launchRate);
         }
     }
 

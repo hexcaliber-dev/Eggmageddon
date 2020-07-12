@@ -284,8 +284,11 @@ MonoBehaviour:
   topRightBorder: {fileID: 1771057557}
   bottomLeftBorder: {fileID: 1588569567}
   missile: {fileID: 3218345141639486863, guid: b3343da712dd8504ba4b2683e11e42b3, type: 3}
-  difficultyRate: 5
+  difficultyRate: 10
   difficultySize: 0
+  launchRate: 5
+  difficultyScale: 1
+  launchClamp: 1
 --- !u!4 &467749763
 Transform:
   m_ObjectHideFlags: 0
@@ -993,7 +996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588569567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.78, y: -3.13, z: 0}
+  m_LocalPosition: {x: -21.07, y: -11.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 242250934}
@@ -1143,7 +1146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771057557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.95, y: 5.01, z: 0}
+  m_LocalPosition: {x: 21.52, y: 11.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 242250934}
@@ -1320,6 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 3
+  marker: {fileID: 0}
   deadEggs: []
   expressions: {fileID: 0}
 --- !u!58 &1867321717
