@@ -12,11 +12,12 @@ public class MainMenu : MonoBehaviour {
     public GameObject startArea;
     public GameObject exitArea;
     public GameObject player;
-    public GameObject player2;
-    public GameObject player3;
-    public GameObject player4;
-    public GameObject player5;
-    public GameObject player6;
+    // public GameObject player2;
+    // public GameObject player3;
+    // public GameObject player4;
+    // public GameObject player5;
+    // public GameObject player6;
+    private int totalPlayerCt = 1;
     public Object firstScene;
     private float previousVolume;
     enum state {start, quit, muteBG, muteFX};
@@ -25,7 +26,8 @@ public class MainMenu : MonoBehaviour {
     private GameObject[] players;
     private int currentAnimated = 0;
     void Start() {
-        players = new GameObject[6]{player, player2, player3, player4, player5, player6};
+        // players = new GameObject[6]{player, player2, player3, player4, player5, player6};
+        players = new GameObject[1]{player};
         StartCoroutine(initStartAnimation(players[currentAnimated]));
     }
 
@@ -100,7 +102,7 @@ public class MainMenu : MonoBehaviour {
             playerIn.transform.position = Vector3.Lerp(origPos, newPos, t);
             yield return null;
         }
-        if (currentAnimated < 5) {
+        if (currentAnimated < totalPlayerCt -1) {
             currentAnimated++;
             StartCoroutine(initStartAnimation(players[currentAnimated]));
         }
