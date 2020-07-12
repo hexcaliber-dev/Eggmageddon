@@ -39,10 +39,13 @@ public class startArea : MonoBehaviour
         // Debug.Log("Start area triggered");
         
         // isEntering = true;
-        colliders.Add(other);
-        startButtonSprite.sprite = buttonPressed;
-        StartCoroutine(startCountdown());
-        AudioHelper.PlaySound("alarm", true, 0.8f);
+        if(other.gameObject.GetComponent<Player>() != null)
+        {
+            colliders.Add(other);
+            startButtonSprite.sprite = buttonPressed;
+            StartCoroutine(startCountdown());
+            AudioHelper.PlaySound("alarm", true, 0.8f);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
