@@ -51,6 +51,7 @@ public abstract class Egg : MonoBehaviour {
             {
                 GameObject.Instantiate(marker, transform.position + new Vector3(0f, 0f, -3f), Quaternion.identity);
             }
+            GameObject.FindObjectOfType<HUD>().UpdateRemainingEggs(GameObject.FindGameObjectsWithTag("Egg").Length);
             Destroy(gameObject);
         }
     }
