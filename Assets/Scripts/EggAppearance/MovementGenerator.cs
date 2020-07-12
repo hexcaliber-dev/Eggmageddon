@@ -26,6 +26,8 @@ public class MovementGenerator : MonoBehaviour {
     }
 
     public Direction GetDirection () {
+        if (anim == null)
+            anim = GetComponent<Animator>();
         return (Direction)anim.GetInteger("direction");
     }
 }

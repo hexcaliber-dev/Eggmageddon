@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour {
 
     public CanvasGroup pauseMenu, endMenu;
-    public TMP_Text remainingText, difficultyText, missileText;
+    public TMP_Text remainingText, difficultyText, timer, gameOverTimer;
     public Image muteButton;
     public Sprite muteOn, muteOff;
 
@@ -20,11 +20,14 @@ public class HUD : MonoBehaviour {
 
     bool initialized = false;
 
+    float timeElapsed;
+
     // Start is called before the first frame update
     void Start () {
         SetPause (false);
         StartCoroutine (DelayedStart ());
-        difficultyText.text = modeNames[(int)CONSTANTS.difficultyStates.STATE_EASY] + " MODE";
+        difficultyText.text = modeNames[(int) CONSTANTS.difficulty] + " MODE";
+        timeElapsed = 0f;
     }
 
     IEnumerator DelayedStart () {
@@ -45,9 +48,14 @@ public class HUD : MonoBehaviour {
             SetPause (pauseMenu.alpha == 0f);
         }
 
-        if (initialized)
-            missileText.text = (int) (GameObject.FindObjectOfType<LaunchSystem> ().launchRate * 100) / 100 + " Seconds";
+        // Timer
+        if (endMenu.alpha == 0f) {
+            timeElapsed += Time.deltaTime;
 
+            string minutes = Mathf.Floor (timeElapsed / 60).ToString ("00");
+            string seconds = (timeElapsed % 60).ToString ("00");
+            timer.text = "" + minutes + ":" + seconds;
+        }
     }
 
     public void SetPause (bool enabled) {
@@ -84,10 +92,11 @@ public class HUD : MonoBehaviour {
     }
 
     public void ShowEndgame () {
+        gameOverTimer.text = "You lasted " + timer.text + " in the boiler. Not bad!";
         endMenu.alpha = 1f;
         endMenu.blocksRaycasts = true;
         endMenu.interactable = true;
-        GameObject.FindObjectOfType<CameraInit>().EndgameZoom();
+        GameObject.FindObjectOfType<CameraInit> ().EndgameZoom ();
     }
 
     public void ReloadLevel () {

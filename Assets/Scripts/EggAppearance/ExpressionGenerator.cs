@@ -40,6 +40,7 @@ public class ExpressionGenerator : MonoBehaviour {
     }
 
     IEnumerator cEmotion (Emotion emote, float seconds) {
+        if (rend == null) yield return null;
         emoting = true;
         rend.sprite = getSpriteList()[(int)emote];
         yield return new WaitForSeconds (seconds);
@@ -47,6 +48,8 @@ public class ExpressionGenerator : MonoBehaviour {
     }
 
     List<Sprite> getSpriteList () {
+        print(movement);
+        if(movement == null) return new List<Sprite>();
         MovementGenerator.Direction dir = movement.GetDirection ();
         if (dir == MovementGenerator.Direction.west) {
             return west;
