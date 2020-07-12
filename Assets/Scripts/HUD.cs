@@ -51,10 +51,12 @@ public class HUD : MonoBehaviour {
 
     public void SetPause (bool enabled) {
         if (enabled) {
+            Time.timeScale = 0f;
             pauseMenu.alpha = 1f;
             pauseMenu.blocksRaycasts = true;
             pauseMenu.interactable = true;
         } else {
+            Time.timeScale = 1f;
             pauseMenu.alpha = 0f;
             pauseMenu.blocksRaycasts = false;
             pauseMenu.interactable = false;
@@ -62,6 +64,7 @@ public class HUD : MonoBehaviour {
     }
 
     public void QuitToMenu () {
+        Time.timeScale = 1f;
         SceneManager.LoadScene ("MainMenu");
     }
 
