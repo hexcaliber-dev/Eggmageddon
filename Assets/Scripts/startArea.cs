@@ -77,17 +77,17 @@ public class startArea : MonoBehaviour
                         if (transform.name == "Easy") {
                             CONSTANTS.difficulty = CONSTANTS.difficultyStates.STATE_EASY;
                             Debug.Log("Starting in " + CONSTANTS.difficulty + " mode");
-                            SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+                            SceneManager.LoadScene("FinalTest", LoadSceneMode.Single);
                         }
                         else if (transform.name == "Medium") {
                             CONSTANTS.difficulty = CONSTANTS.difficultyStates.STATE_MED;
                             Debug.Log("Starting in " + CONSTANTS.difficulty + " mode");
-                            SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+                            SceneManager.LoadScene("FinalTest", LoadSceneMode.Single);
                         }
                         else if (transform.name == "Hard") {
                             CONSTANTS.difficulty = CONSTANTS.difficultyStates.STATE_HARD;
                             Debug.Log("Starting in " + CONSTANTS.difficulty + " mode");
-                            SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+                            SceneManager.LoadScene("FinalTest", LoadSceneMode.Single);
                         }
                             
                         else if (transform.name == "ExitArea") {
