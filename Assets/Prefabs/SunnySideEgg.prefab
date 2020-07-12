@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 468312086563055217}
   - component: {fileID: 6624373060103842269}
   m_Layer: 0
-  m_Name: ScrambledEgg
+  m_Name: SunnySideEgg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7c19379549584f245b480702ba3d780e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d77eb0823349dd4ea6dfdeb439ffd18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
