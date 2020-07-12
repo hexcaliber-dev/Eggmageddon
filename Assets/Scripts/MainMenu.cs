@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject startArea;
     public GameObject exitArea;
     public GameObject player;
+    
     // public GameObject player2;
     // public GameObject player3;
     // public GameObject player4;
@@ -28,13 +29,14 @@ public class MainMenu : MonoBehaviour {
     void Start() {
         // players = new GameObject[6]{player, player2, player3, player4, player5, player6};
         players = new GameObject[1]{player};
+        
         StartCoroutine(initStartAnimation(players[currentAnimated]));
     }
 
     void Update() {
         eggImg1.Rotate(Vector3.right * Time.deltaTime * 10);
         eggImg2.Rotate(Vector3.left * Time.deltaTime * 10);
-        startArea.transform.Rotate(Vector3.forward * Time.deltaTime * 100);
+        // startArea.transform.Rotate(Vector3.forward * Time.deltaTime * 100);
         exitArea.transform.Rotate(Vector3.forward * -1 * Time.deltaTime * 100);
         if (Vector3.Distance(player.transform.position, startArea.transform.position) < 1f) {
             Debug.Log("on start");

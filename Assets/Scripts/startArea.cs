@@ -11,6 +11,10 @@ public class startArea : MonoBehaviour
 
     public TMP_Text startAreaText;
     public Object firstScene;
+    public Sprite buttonUnpressed;
+    public Sprite buttonPressed;
+    private SpriteRenderer startButtonSprite;
+
     float currentTime;
     bool isEntering;
     string origText;
@@ -18,6 +22,8 @@ public class startArea : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startButtonSprite = GetComponent<SpriteRenderer>();
+        startButtonSprite.sprite = buttonUnpressed;
         isEntering = false;
         origText = startAreaText.text;
     }
@@ -34,6 +40,7 @@ public class startArea : MonoBehaviour
         
         // isEntering = true;
         colliders.Add(other);
+        startButtonSprite.sprite = buttonPressed;
         StartCoroutine(startCountdown());
     }
 
@@ -44,6 +51,7 @@ public class startArea : MonoBehaviour
         colliders.Remove(other);
         if (colliders.Count == 0) {
             startAreaText.text = origText;
+            startButtonSprite.sprite = buttonUnpressed;
         }
         
     }
