@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour {
 
-    public CanvasGroup pauseMenu;
+    public CanvasGroup pauseMenu, endMenu;
     public TMP_Text remainingText, difficultyText, missileText;
     public Image muteButton;
     public Sprite muteOn, muteOff;
@@ -80,5 +80,16 @@ public class HUD : MonoBehaviour {
 
     public void UpdateRemainingEggs (int remaining) {
         remainingText.text = remaining + " OF " + totalEggs + " EGGS LEFT";
+    }
+
+    public void ShowEndgame () {
+        endMenu.alpha = 1f;
+        endMenu.blocksRaycasts = true;
+        endMenu.interactable = true;
+        GameObject.FindObjectOfType<CameraInit>().EndgameZoom();
+    }
+
+    public void ReloadLevel () {
+        SceneManager.LoadScene ("FinalTest");
     }
 }

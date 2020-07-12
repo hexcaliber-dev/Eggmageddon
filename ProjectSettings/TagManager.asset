@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Explosion
   - Egg
+  - Marker
   layers:
   - Default
   - TransparentFX

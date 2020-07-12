@@ -48,6 +48,7 @@ public abstract class Egg : MonoBehaviour {
         } else if (currHealth <= 0) {
             GameObject.Instantiate (deadEggs[Random.Range (0, deadEggs.Length)], transform.position, Quaternion.identity);
             if (gameObject.GetComponent<Player> () != null) {
+                GameObject.FindObjectOfType<HUD>().ShowEndgame();
                 GameObject.Instantiate (marker, transform.position + new Vector3 (0f, 0f, -3f), Quaternion.identity);
             }
             GameObject.FindObjectOfType<HUD> ().UpdateRemainingEggs (GameObject.FindGameObjectsWithTag ("Egg").Length);
