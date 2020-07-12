@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 452344220}
   m_Layer: 0
   m_Name: ExitArea
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
   behavior: {fileID: 11400000, guid: 53985ab81b229cd4f8beb4966905e597, type: 2}
   scaredDistance: 5
   scaredDuration: 3
-  startingCount: 5
+  startingCount: 20
   AgentDensity: 0.129
   driveFactor: 9.8
   maxSpeed: 1
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 884504280}
   m_Layer: 0
   m_Name: StartArea
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
