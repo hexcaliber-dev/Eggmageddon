@@ -48,6 +48,7 @@ public class LaunchSystem : MonoBehaviour {
         while (gameOngoing) {
             location = randomPosition ();
             GameObject x = Instantiate (missile);
+            AudioHelper.PlaySound("missileincoming");
             currentExplosions.Add (x);
             x.transform.position = location;
             Debug.Log (currentExplosions.Count);

@@ -12,6 +12,7 @@ public class AudioHelper : MonoBehaviour {
     private static AudioSource[] audioSources;
 
     public static void PlaySound (string soundName, bool isLoop, float volume) {
+        if (audioSources == null) return;
         foreach (AudioSource src in audioSources) {
             if (!src.isPlaying) {
                 src.loop = isLoop;
@@ -42,12 +43,12 @@ public class AudioHelper : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start () {
+        audioSources = GetComponentsInChildren<AudioSource> ();
         staticClips = new Dictionary<string, AudioClip> ();
         foreach (AudioClip clip in audioClips) {
             staticClips.Add (clip.name, clip);
         }
 
-        audioSources = GetComponentsInChildren<AudioSource> ();
     }
 
     IEnumerator StopPlaying(AudioSource source) {

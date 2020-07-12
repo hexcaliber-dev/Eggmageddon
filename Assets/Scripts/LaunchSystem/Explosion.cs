@@ -52,6 +52,8 @@ abstract public class Explosion : MonoBehaviour
     IEnumerator startMassacre()
     {
         yield return new WaitForSeconds(detonationDelay);
+        if (!applyingAffect)
+            AudioHelper.PlaySound("explosion", 0.5f);
         applyingAffect = true;
         explosionObject.SetActive(true);
         foreach(GameObject eggu in GameObject.FindGameObjectsWithTag("Egg")) {
