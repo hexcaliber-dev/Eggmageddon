@@ -18,14 +18,24 @@ public class HUD : MonoBehaviour {
 
     string[] modeNames = new string[] { "OVER-EASY", "MEDIUM-WELL", "HARD-BOILED" };
 
+    bool initialized = false;
+
     // Start is called before the first frame update
     void Start () {
         SetPause (false);
+        StartCoroutine (DelayedStart ());
+    }
+
+    IEnumerator DelayedStart () {
+        yield return new WaitForSeconds (0.5f);
         totalEggs = GameObject.FindGameObjectsWithTag ("Egg").Length;
-        headwear.sprite = GameObject.FindObjectOfType<AccessoryGenerator> ().GetCurrHat ();
+        UpdateRemainingEggs (totalEggs);
+        print (GameObject.FindObjectOfType<Player> ());
+        headwear.sprite = GameObject.FindObjectOfType<Player> ().accessories.GetCurrHat ();
         if (AudioListener.volume == 0) {
             muteButton.sprite = muteOn;
         }
+        initialized = true;
     }
 
     // Update is called once per frame
@@ -34,7 +44,8 @@ public class HUD : MonoBehaviour {
             SetPause (pauseMenu.alpha == 0f);
         }
 
-        missileText.text = (int) (GameObject.FindObjectOfType<LaunchSystem> ().launchRate * 100) / 100 + " Seconds";
+        if (initialized)
+            missileText.text = (int) (GameObject.FindObjectOfType<LaunchSystem> ().launchRate * 100) / 100 + " Seconds";
 
     }
 

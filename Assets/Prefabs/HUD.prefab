@@ -87,9 +87,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2935245607266063058}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &2935245607329441606
 GameObject:
@@ -371,7 +371,7 @@ MonoBehaviour:
   muteButton: {fileID: 2935245609223478060}
   muteOn: {fileID: 21300000, guid: 4b59da84cf92cdb43a531e88faa96d98, type: 3}
   muteOff: {fileID: 21300000, guid: a00a0ef845dcf5e48896bb604f6ba182, type: 3}
-  headwear: {fileID: 0}
+  headwear: {fileID: 2935245607842920930}
 --- !u!1 &2935245607490390641
 GameObject:
   m_ObjectHideFlags: 0

@@ -84,6 +84,7 @@ MonoBehaviour:
   - {fileID: 511846765321277427}
   - {fileID: 7567573100931854123}
   - {fileID: 6366578719553296793}
+  currHat: 0
 --- !u!212 &4970432032897184107
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -329,6 +330,7 @@ MonoBehaviour:
   - {fileID: 1984246184698197087, guid: 0ff9385cb7692a649ade482e2091be7c, type: 3}
   - {fileID: 1984246184698197087, guid: 893a5294e05df1e4cb8227a719e7e4f3, type: 3}
   expressions: {fileID: 1435672025}
+  accessories: {fileID: 6261196977428142806}
 --- !u!114 &2487687
 MonoBehaviour:
   m_ObjectHideFlags: 0
