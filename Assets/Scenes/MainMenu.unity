@@ -683,11 +683,11 @@ MonoBehaviour:
   scaredDistance: 5
   scaredDuration: 3
   startingCount: 20
-  AgentDensity: 0.4
-  driveFactor: 58.3
+  AgentDensity: 0.299
+  driveFactor: 100
   maxSpeed: 1
   neighborRadius: 1.89
-  avoidanceRadiusMultiplier: 0.562
+  avoidanceRadiusMultiplier: 1
 --- !u!4 &593172142
 Transform:
   m_ObjectHideFlags: 0
