@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject startArea;
     public GameObject exitArea;
     public GameObject player;
+    public GameObject logo;
 
     // public GameObject player2;
     // public GameObject player3;
@@ -20,6 +21,8 @@ public class MainMenu : MonoBehaviour {
     private int totalPlayerCt = 1;
     public Object firstScene;
     private float previousVolume;
+    private RawImage logo_raw;
+
     enum state { start, quit, muteBG, muteFX }
     // Begin game
     // Difficulty
@@ -28,13 +31,21 @@ public class MainMenu : MonoBehaviour {
     void Start () {
         // players = new GameObject[6]{player, player2, player3, player4, player5, player6};
         players = new GameObject[1] { player };
+        logo_raw = logo.GetComponent<RawImage>();
 
-        StartCoroutine (initStartAnimation (players[currentAnimated]));
+        StartCoroutine (initStartAnimation (logo, 350f));
+        StartCoroutine (initStartAnimation (startArea, -2.54f));
+        StartCoroutine (initStartAnimation (exitArea, -2.54f));
+
+        StartCoroutine (initStartAnimation (players[currentAnimated], -0.334f));
     }
 
     void Update () {
-        eggImg1.Rotate (Vector3.right * Time.deltaTime * 10);
-        eggImg2.Rotate (Vector3.left * Time.deltaTime * 10);
+        // eggImg1.Rotate (Vector3.right * Time.deltaTime * 10);
+        // eggImg2.Rotate (Vector3.left * Time.deltaTime * 10);
+
+        // logo.transform.Rotate (Vector3.left * Time.deltaTime * 10);
+
         // startArea.transform.Rotate(Vector3.forward * Time.deltaTime * 100);
         exitArea.transform.Rotate (Vector3.forward * -1 * Time.deltaTime * 100);
         if (Vector3.Distance (player.transform.position, startArea.transform.position) < 1f) {
@@ -78,13 +89,13 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene (scene.name, LoadSceneMode.Single);
     }
 
-    private IEnumerator initStartAnimation (GameObject playerIn) {
+    private IEnumerator initStartAnimation (GameObject playerIn, float newPosY) {
         float timeElapsed = 0.0f;
         float duration = 3f;
         float t = 0.0f;
         Vector3 origPos = playerIn.transform.position;
         Vector3 newPos = playerIn.transform.position;
-        newPos.y = -0.334f;
+        newPos.y = newPosY;
 
         while (t < 1.0f) {
             timeElapsed += Time.deltaTime;
@@ -94,10 +105,10 @@ public class MainMenu : MonoBehaviour {
             playerIn.transform.position = Vector3.Lerp (origPos, newPos, t);
             yield return null;
         }
-        if (currentAnimated < totalPlayerCt - 1) {
-            currentAnimated++;
-            StartCoroutine (initStartAnimation (players[currentAnimated]));
-        }
+        // if (currentAnimated < totalPlayerCt - 1) {
+        //     currentAnimated++;
+        //     StartCoroutine (initStartAnimation (players[currentAnimated], -0.334f));
+        // }
 
     }
 

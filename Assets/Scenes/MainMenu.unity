@@ -412,7 +412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452344218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1799927, y: -2.619995, z: 2}
+  m_LocalPosition: {x: -5.1799927, y: -8.06, z: 2}
   m_LocalScale: {x: 0.37377, y: 0.37728998, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1078,7 +1078,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.5, y: 134.86}
+  m_AnchoredPosition: {x: -35.5, y: 463}
   m_SizeDelta: {x: 469.47202, y: 103.718414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869432832
@@ -1172,7 +1172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884504277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.369995, y: -2.5400085, z: 2}
+  m_LocalPosition: {x: 4.369995, y: -8.07, z: 2}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2044,6 +2044,7 @@ MonoBehaviour:
   startArea: {fileID: 884504277}
   exitArea: {fileID: 452344218}
   player: {fileID: 1499191599}
+  logo: {fileID: 869432830}
   firstScene: {fileID: 102900000, guid: 3a8ef32016437d5469325bf60fbddce0, type: 3}
 --- !u!114 &1748793190
 MonoBehaviour:
