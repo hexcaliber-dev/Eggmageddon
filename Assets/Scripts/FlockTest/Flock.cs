@@ -10,7 +10,7 @@ public class Flock : MonoBehaviour
     public float scaredDistance;
     public float scaredDuration;
 
-    [Range(10, 500)]
+    [Range(5, 500)]
     public int startingCount = 250;
 
     [Range(0f, 0.5f)]
