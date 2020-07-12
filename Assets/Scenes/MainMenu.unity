@@ -1483,7 +1483,7 @@ PrefabInstance:
     - target: {fileID: 8191939708244975583, guid: 21a940fbcef6b774c904a1d94fd80616,
         type: 3}
       propertyPath: m_Name
-      value: 1
+      value: Egg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a940fbcef6b774c904a1d94fd80616, type: 3}
@@ -1886,11 +1886,6 @@ MonoBehaviour:
   startArea: {fileID: 884504277}
   exitArea: {fileID: 452344218}
   player: {fileID: 1499191599}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
-  player5: {fileID: 0}
-  player6: {fileID: 0}
   firstScene: {fileID: 102900000, guid: 3a8ef32016437d5469325bf60fbddce0, type: 3}
 --- !u!114 &1748793190
 MonoBehaviour:
