@@ -8,7 +8,10 @@ public class MainMenu : MonoBehaviour {
     public Image eggBG;
     public GameObject eggImg1;
     public GameObject eggImg2;
-    public GameObject startArea;
+    public GameObject startAreaEasy;
+    public GameObject startAreaMed;
+    public GameObject startAreaHard;
+
     public GameObject exitArea;
     public GameObject player;
     public GameObject logo;
@@ -39,7 +42,10 @@ public class MainMenu : MonoBehaviour {
         // StartCoroutine (initStartAnimation (logo, 1000f));
         // StartCoroutine (initStartAnimation (eggImg1, 1000f));
         // StartCoroutine (initStartAnimation (eggImg2, 1000f));
-        StartCoroutine (initStartAnimation (startArea, -2.54f));
+        StartCoroutine (initStartAnimation (startAreaEasy, -2.54f));
+        StartCoroutine (initStartAnimation (startAreaMed, -2.54f));
+        StartCoroutine (initStartAnimation (startAreaHard, -2.54f));
+        
         StartCoroutine (initStartAnimation (exitArea, -2.54f));
         StartCoroutine (initStartAnimation (players[currentAnimated], -0.334f));
     }
@@ -52,9 +58,9 @@ public class MainMenu : MonoBehaviour {
 
         // startArea.transform.Rotate(Vector3.forward * Time.deltaTime * 100);
         exitArea.transform.Rotate (Vector3.forward * -1 * Time.deltaTime * 100);
-        if (Vector3.Distance (player.transform.position, startArea.transform.position) < 1f) {
-            Debug.Log ("on start");
-        }
+        // if (Vector3.Distance (player.transform.position, startArea.transform.position) < 1f) {
+        //     Debug.Log ("on start");
+        // }
 
     }
 
