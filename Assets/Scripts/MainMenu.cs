@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour {
 
     public Image eggBG;
-    public RectTransform eggImg1;
-    public RectTransform eggImg2;
+    public GameObject eggImg1;
+    public GameObject eggImg2;
     public GameObject startArea;
     public GameObject exitArea;
     public GameObject player;
@@ -34,9 +34,10 @@ public class MainMenu : MonoBehaviour {
         logo_raw = logo.GetComponent<RawImage>();
 
         StartCoroutine (initStartAnimation (logo, 350f));
+        StartCoroutine (initStartAnimation (eggImg1, 350f));
+        StartCoroutine (initStartAnimation (eggImg2, 350f));
         StartCoroutine (initStartAnimation (startArea, -2.54f));
         StartCoroutine (initStartAnimation (exitArea, -2.54f));
-
         StartCoroutine (initStartAnimation (players[currentAnimated], -0.334f));
     }
 
