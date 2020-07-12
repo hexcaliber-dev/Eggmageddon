@@ -10,12 +10,11 @@ public class AccessoryGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int r = Random.Range(0, hats.Count + 2);
+        int r = Random.Range(0, hats.Count + 1);
         if (r <= hats.Count-1) {
             hats[r].SetActive(true);
             currHat = r;
         }
-        
     }
 
     // Update is called once per frame

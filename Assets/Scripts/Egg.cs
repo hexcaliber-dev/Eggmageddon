@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class Egg : MonoBehaviour {
     public const float maxSpeed = 5f;
-    public const float accelRate = 3f,
-        decelRate = 3f;
+    public const float accelRate = 7f,
+        decelRate = 7f;
     public const int maxHealth = 3;
 
     public int currHealth;
@@ -34,7 +34,8 @@ public abstract class Egg : MonoBehaviour {
         if (col.gameObject.CompareTag("Egg"))
         {
             Vector2 knockback = (Vector2)col.transform.position - currentPos; //knockback direction
-            body.AddForce(knockback * scale);
+            if (body != null)
+                body.AddForce(knockback * scale);
         }
 
         // Handle missile collisions TODO
