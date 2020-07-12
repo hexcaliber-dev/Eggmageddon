@@ -68,8 +68,20 @@ public class startArea : MonoBehaviour
                     startAreaText.text="T-1";
                     yield return new WaitForSeconds(1);
                     if (colliders.Count != 0) {
-                        if (transform.name == "StartArea")
+                        if (transform.name == "Easy") {
+                            Debug.Log("Starting in " + CONSTANTS.difficulty + " mode");
+                            CONSTANTS.difficulty = CONSTANTS.difficultyStates.STATE_EASY;
                             SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+                        }
+                        else if (transform.name == "Medium") {
+                            Debug.Log("Starting in " + CONSTANTS.difficulty + " mode");
+                            SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+                        }
+                        else if (transform.name == "Hard") {
+                            Debug.Log("Starting in " + CONSTANTS.difficulty + " mode");
+                            SceneManager.LoadScene(firstScene.name, LoadSceneMode.Single);
+                        }
+                            
                         else if (transform.name == "ExitArea") {
                             Debug.Log("exiting game");
                             Application.Quit(0);
