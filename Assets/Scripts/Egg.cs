@@ -7,7 +7,7 @@ public abstract class Egg : MonoBehaviour {
     public const int maxHealth = 3;
 
     public int currHealth;
-
+    public GameObject marker;
     public GameObject[] deadEggs;
 
     private Rigidbody2D body;
@@ -47,6 +47,10 @@ public abstract class Egg : MonoBehaviour {
             print("crack");
         } else if (currHealth <= 0) {
             GameObject.Instantiate(deadEggs[Random.Range(0, deadEggs.Length)], transform.position, Quaternion.identity);
+            if (gameObject.GetComponent<Player>() != null)
+            {
+                GameObject.Instantiate(marker, transform.position + new Vector3(0f, 0f, -3f), Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }

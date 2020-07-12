@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Player : Egg {
 
+
     Rigidbody2D rigidBody;
     public ExpressionGenerator expressions;
 
