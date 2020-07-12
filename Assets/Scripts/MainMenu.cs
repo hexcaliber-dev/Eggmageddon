@@ -33,9 +33,12 @@ public class MainMenu : MonoBehaviour {
         players = new GameObject[1] { player };
         logo_raw = logo.GetComponent<RawImage>();
 
-        StartCoroutine (initStartAnimation (logo, 350f));
-        StartCoroutine (initStartAnimation (eggImg1, 350f));
-        StartCoroutine (initStartAnimation (eggImg2, 350f));
+        StartCoroutine (initStartAnimation (logo, Screen.height - Screen.height / 3));
+        StartCoroutine (initStartAnimation (eggImg1, Screen.height - Screen.height / 3));
+        StartCoroutine (initStartAnimation (eggImg2, Screen.height - Screen.height / 3));
+        // StartCoroutine (initStartAnimation (logo, 1000f));
+        // StartCoroutine (initStartAnimation (eggImg1, 1000f));
+        // StartCoroutine (initStartAnimation (eggImg2, 1000f));
         StartCoroutine (initStartAnimation (startArea, -2.54f));
         StartCoroutine (initStartAnimation (exitArea, -2.54f));
         StartCoroutine (initStartAnimation (players[currentAnimated], -0.334f));
