@@ -9,6 +9,7 @@ public class Flock : MonoBehaviour
     public FlockBehavior behavior;
     public float scaredDistance;
     public float scaredDuration;
+    public float spawnRadius;
 
     [Range(5, 500)]
     public int startingCount = 250;
@@ -42,7 +43,7 @@ public class Flock : MonoBehaviour
         {
             FlockAgent newAgent = Instantiate(
                 agentPrefab,
-                Random.insideUnitCircle * startingCount * AgentDensity,
+                Random.insideUnitCircle * spawnRadius * AgentDensity,
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
                 );

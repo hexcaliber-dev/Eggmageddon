@@ -1018,6 +1018,7 @@ MonoBehaviour:
   behavior: {fileID: 11400000, guid: 53985ab81b229cd4f8beb4966905e597, type: 2}
   scaredDistance: 5
   scaredDuration: 3
+  spawnRadius: 20
   startingCount: 20
   AgentDensity: 0.299
   driveFactor: 100
@@ -3345,7 +3346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.89512515, y: 0.029000001}
   m_AnchorMax: {x: 0.985125, y: 0.1758507}
-  m_AnchoredPosition: {x: -1, y: -4.138031}
+  m_AnchoredPosition: {x: -1, y: -4.1380615}
   m_SizeDelta: {x: -46.486763, y: -8.276901}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964353480
