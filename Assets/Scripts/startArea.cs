@@ -42,6 +42,7 @@ public class startArea : MonoBehaviour
         colliders.Add(other);
         startButtonSprite.sprite = buttonPressed;
         StartCoroutine(startCountdown());
+        AudioHelper.PlaySound("alarm", true, 0.8f);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -53,6 +54,8 @@ public class startArea : MonoBehaviour
             startAreaText.text = origText;
             startButtonSprite.sprite = buttonUnpressed;
         }
+
+        AudioHelper.Stop();
         
     }
 

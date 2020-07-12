@@ -15,6 +15,10 @@ public class MainMenu : MonoBehaviour {
     public GameObject exitArea;
     public GameObject player;
     public GameObject logo;
+    public GameObject launchOrder;
+
+    public Image muteButton;
+    public Sprite muteOn, muteOff;
 
     // public GameObject player2;
     // public GameObject player3;
@@ -34,18 +38,19 @@ public class MainMenu : MonoBehaviour {
     void Start () {
         // players = new GameObject[6]{player, player2, player3, player4, player5, player6};
         players = new GameObject[1] { player };
-        logo_raw = logo.GetComponent<RawImage>();
+        logo_raw = logo.GetComponent<RawImage> ();
 
-        StartCoroutine (initStartAnimation (logo, Screen.height - Screen.height / 3));
-        StartCoroutine (initStartAnimation (eggImg1, Screen.height - Screen.height / 3));
-        StartCoroutine (initStartAnimation (eggImg2, Screen.height - Screen.height / 3));
+        StartCoroutine (initStartAnimation (logo, Screen.height - Screen.height / 4));
+        StartCoroutine (initStartAnimation (eggImg1, Screen.height - Screen.height / 4));
+        StartCoroutine (initStartAnimation (eggImg2, Screen.height - Screen.height / 4));
+        StartCoroutine (initStartAnimation (launchOrder, Screen.height - Screen.height / 2));
         // StartCoroutine (initStartAnimation (logo, 1000f));
         // StartCoroutine (initStartAnimation (eggImg1, 1000f));
         // StartCoroutine (initStartAnimation (eggImg2, 1000f));
         StartCoroutine (initStartAnimation (startAreaEasy, -2.54f));
         StartCoroutine (initStartAnimation (startAreaMed, -2.54f));
         StartCoroutine (initStartAnimation (startAreaHard, -2.54f));
-        
+
         StartCoroutine (initStartAnimation (exitArea, -2.54f));
         StartCoroutine (initStartAnimation (players[currentAnimated], -0.334f));
     }
@@ -123,14 +128,15 @@ public class MainMenu : MonoBehaviour {
     }
 
     //     Mute music/sfx corner button
+
     public void toggleMute () {
         if (AudioListener.volume != 0) {
-            previousVolume = AudioListener.volume;
             AudioListener.volume = 0;
+            muteButton.sprite = muteOn;
         } else {
-            AudioListener.volume = previousVolume;
+            AudioListener.volume = 1f;
+            muteButton.sprite = muteOff;
         }
-        Debug.Log ("Volume is now: " + AudioListener.volume);
     }
 
     //     Quit game
